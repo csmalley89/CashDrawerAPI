@@ -20,7 +20,7 @@ namespace CashDrawer.Models
     public ICollection<LineItem> LineItems;
 
     [Required]
-    public decimal Cost { get; set; }
+    public int Cost { get; set; }
 
     [Required]
     public int Quantity { get; set; }

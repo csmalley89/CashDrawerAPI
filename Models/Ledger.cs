@@ -16,9 +16,9 @@ namespace CashDrawer.Models
     public DateTime TimeStamp {get;set;}
 
     [Required]
-    public decimal OpenDrawerBalance{ get; set; }
+    public int OpenDrawerBalance{ get; set; }
 
-    public decimal ClosedDrawerBalance { get; set; }
+    public int ClosedDrawerBalance { get; set; }
 
     }
 }
