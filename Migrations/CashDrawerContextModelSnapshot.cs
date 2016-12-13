@@ -20,9 +20,9 @@ namespace CashDrawerAPI.Migrations
                     b.Property<int>("LedgerId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("ClosedDrawerBalance");
+                    b.Property<int>("ClosedDrawerBalance");
 
-                    b.Property<decimal>("OpenDrawerBalance");
+                    b.Property<int>("OpenDrawerBalance");
 
                     b.Property<DateTime>("TimeStamp")
                         .ValueGeneratedOnAddOrUpdate()
@@ -56,9 +56,9 @@ namespace CashDrawerAPI.Migrations
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("SubTotal");
+                    b.Property<int>("SubTotal");
 
-                    b.Property<decimal?>("Tax");
+                    b.Property<int?>("Tax");
 
                     b.Property<DateTime>("TimeStamp")
                         .ValueGeneratedOnAddOrUpdate()
@@ -74,7 +74,7 @@ namespace CashDrawerAPI.Migrations
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<decimal>("Cost");
+                    b.Property<int>("Cost");
 
                     b.Property<bool>("IsTaxable");
 
