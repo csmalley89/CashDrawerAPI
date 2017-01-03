@@ -74,7 +74,7 @@ namespace CashDrawerAPI.Migrations
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Cost");
+                    b.Property<decimal>("Cost");
 
                     b.Property<bool>("IsTaxable");
 
@@ -85,6 +85,8 @@ namespace CashDrawerAPI.Migrations
                     b.Property<decimal>("Price");
 
                     b.Property<int>("Quantity");
+
+                    b.Property<decimal>("TaxRate");
 
                     b.HasKey("ProductId");
 
