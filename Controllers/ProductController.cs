@@ -93,7 +93,7 @@ namespace CashDrawerAPI.Controllers
             return CreatedAtRoute("GetProduct", new { id = product.ProductId }, product);
         }
 
-        // PUT api/values/5
+        // PUT products/5
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] Product product)
         {
@@ -111,7 +111,7 @@ namespace CashDrawerAPI.Controllers
             return new NoContentResult();
         }
 
-        // DELETE api/values/5
+        // DELETE products/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

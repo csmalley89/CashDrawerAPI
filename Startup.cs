@@ -56,6 +56,7 @@ namespace CashDrawerAPI
             Console.WriteLine("Configure");
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            app.UseCors("AllowDevelopmentEnvironment");
 
             app.UseMvc();
         }
