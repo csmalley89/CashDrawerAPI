@@ -20,13 +20,15 @@ namespace CashDrawer.Models
     public ICollection<LineItem> LineItems;
 
     [Required]
-    public int Cost { get; set; }
+    public decimal Cost { get; set; }
 
     [Required]
     public int Quantity { get; set; }
 
     [Required]
     public bool IsTaxable { get; set; }
+
+    public decimal TaxRate { get; set; }
 
     }
 }

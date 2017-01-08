@@ -26,7 +26,8 @@
                 }
             },
             "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "CashDrawer_Db_Path": "/Users/csmalley/workspace/capstone/CashDrawerAPI/CashDrawerDb.db"
             },
             "sourceFileMap": {
                 "/Views": "${workspaceRoot}/Views"
