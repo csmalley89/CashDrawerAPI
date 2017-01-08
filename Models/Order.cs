@@ -12,9 +12,9 @@ namespace CashDrawer.Models
     public int OrderId {get;set;}
 
     [Required]
-    [DataType(DataType.Date)]
+    [DataType(DataType.DateTime)]
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime TimeStamp {get;set;}
+    public DateTimeOffset TimeStamp {get;set;}
 
     public ICollection<LineItem> LineItems;
 

@@ -18,11 +18,12 @@ namespace CashDrawer.Data
         {
             modelBuilder.Entity<Order>()
                 .Property(b => b.TimeStamp)
-                .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S')");
+                .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')");
 
             modelBuilder.Entity<Ledger>()
                 .Property(b => b.TimeStamp)
-                .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S')");
+                .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')");
+            
         }
     }
 

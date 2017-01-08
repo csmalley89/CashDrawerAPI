@@ -24,9 +24,9 @@ namespace CashDrawerAPI.Migrations
 
                     b.Property<decimal>("OpenDrawerBalance");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<DateTimeOffset>("TimeStamp")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S')");
+                        .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')");
 
                     b.HasKey("LedgerId");
 
@@ -42,11 +42,9 @@ namespace CashDrawerAPI.Migrations
 
                     b.Property<int>("ProductId");
 
+                    b.Property<int>("Quantity");
+
                     b.HasKey("LineItemId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("LineItem");
                 });
@@ -60,9 +58,9 @@ namespace CashDrawerAPI.Migrations
 
                     b.Property<decimal?>("Tax");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<DateTimeOffset>("TimeStamp")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S')");
+                        .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')");
 
                     b.HasKey("OrderId");
 
@@ -91,19 +89,6 @@ namespace CashDrawerAPI.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Product");
-                });
-
-            modelBuilder.Entity("CashDrawer.Models.LineItem", b =>
-                {
-                    b.HasOne("CashDrawer.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CashDrawer.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

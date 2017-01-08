@@ -11,9 +11,9 @@ namespace CashDrawer.Models
     public int LedgerId {get;set;}
 
     [Required]
-    [DataType(DataType.Date)]
+    [DataType(DataType.DateTime)]
     [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime TimeStamp {get;set;}
+    public DateTimeOffset TimeStamp {get;set;}
 
     [Required]
     public decimal OpenDrawerBalance{ get; set; }
