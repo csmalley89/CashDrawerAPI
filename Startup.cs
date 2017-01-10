@@ -58,6 +58,8 @@ namespace CashDrawerAPI
             loggerFactory.AddDebug();
             app.UseCors("AllowDevelopmentEnvironment");
 
+            DbInitializer.Initialize(app.ApplicationServices);
+            
             app.UseMvc();
         }
     }

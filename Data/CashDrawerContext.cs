@@ -24,6 +24,15 @@ namespace CashDrawer.Data
                 .Property(b => b.TimeStamp)
                 .HasDefaultValueSql("strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')");
             
+            modelBuilder.Entity<Order>()
+                .Property(b => b.TimeStamp)
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.IsReadOnlyBeforeSave = false; 
+                
+            modelBuilder.Entity<Order>()
+                .Property(b => b.TimeStamp)
+                .Metadata.IsReadOnlyAfterSave = false;
+            
         }
     }
 

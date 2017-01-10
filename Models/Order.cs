@@ -18,9 +18,9 @@ namespace CashDrawer.Models
 
     public ICollection<LineItem> LineItems;
 
-    public decimal SubTotal {get;set;}
+    public double SubTotal {get;set;}
 
-    public decimal? Tax {get;set;}
+    public double? Tax {get;set;}
 
   }
 }

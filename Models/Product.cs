@@ -16,11 +16,11 @@ namespace CashDrawer.Models
     public string Name { get; set; }
 
     [Required]
-    public decimal Price { get; set; }
+    public double Price { get; set; }
     public ICollection<LineItem> LineItems;
 
     [Required]
-    public decimal Cost { get; set; }
+    public double Cost { get; set; }
 
     [Required]
     public int Quantity { get; set; }
@@ -28,7 +28,7 @@ namespace CashDrawer.Models
     [Required]
     public bool IsTaxable { get; set; }
 
-    public decimal TaxRate { get; set; }
+    public double TaxRate { get; set; }
 
     }
 }
